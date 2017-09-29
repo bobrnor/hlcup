@@ -1,0 +1,31 @@
+2017-09-29 11:33:10,199 [INFO] yandextank.config_converter.converter converter.py:484	Converted config:
+core: {}
+
+2017-09-29 11:33:10,200 [WARNING] root consoleworker.py:178	/etc/yandex-tank is not accessible to get configs list
+2017-09-29 11:33:10,221 [DEBUG] yandextank.core.tankcore tankcore.py:439	Adding artifact file to collect (keep=False): /tmp/tmpGlZUl1_pre-validation-config.yaml
+2017-09-29 11:33:10,222 [DEBUG] yandextank.core.tankcore tankcore.py:439	Adding artifact file to collect (keep=False): tank.log
+2017-09-29 11:33:10,354 [DEBUG] yandextank.core.tankcore tankcore.py:479	Releasing lock: /var/lock/lunapark_inHhnG.lock
+2017-09-29 11:33:10,355 [ERROR] root cli.py:91	Exception: Validation error:
+phantom:
+  address: [required field]
+  load_profile: [required field]
+
+2017-09-29 11:33:10,358 [DEBUG] root cli.py:92	Exception: Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/yandextank/core/cli.py", line 87, in main
+    worker.configure()
+  File "/usr/local/lib/python2.7/dist-packages/yandextank/core/consoleworker.py", line 353, in configure
+    self.core.get_lock(self.options.ignore_lock, self.lock_dir)
+  File "/usr/local/lib/python2.7/dist-packages/yandextank/core/tankcore.py", line 471, in get_lock
+    self.config.save(self.lock_file)
+  File "/usr/local/lib/python2.7/dist-packages/yandextank/validator/validator.py", line 121, in save
+    [self.validated,
+  File "/usr/local/lib/python2.7/dist-packages/yandextank/validator/validator.py", line 110, in validated
+    self._validated = self.__validate()
+  File "/usr/local/lib/python2.7/dist-packages/yandextank/validator/validator.py", line 162, in __validate
+    raise ValidationError((dict(errors)))
+ValidationError: Validation error:
+phantom:
+  address: [required field]
+  load_profile: [required field]
+
+
